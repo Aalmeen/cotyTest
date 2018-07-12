@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/bson-3.0.4.jar"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/extentreports-2.41.2.jar"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/mongodb-driver-3.0.4.jar"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/mongodb-driver-core-3.0.4.jar"/>
+	<classpathentry kind="lib" path="resources/extentreport-jars/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Desktop/Testing Doc/soft/log4j-1.2.17/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Desktop/Testing Doc/soft/selenium-server-standalone-3.12.0.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-examples-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-excelant-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-scratchpad-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/ooxml-lib/curvesapi-1.04.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aalmeen.k/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
