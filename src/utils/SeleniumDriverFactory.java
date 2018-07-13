@@ -62,6 +62,14 @@ public class SeleniumDriverFactory {
 		driver.get(cotyUrl);
 		Log.info("Coty Web application launched");
 	}
+	
+	public void acceptAlert() {
+		driver.switchTo().alert().accept();
+	}
+	
+	public String getAlertMessage() {
+		return driver.switchTo().alert().getText();
+	}
 
 	@AfterClass
 	public void tearDown() {

@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class cotyAdminPage {
 	
 	public WebDriver driver;
+	JavascriptExecutor js = ((JavascriptExecutor) driver);
 
 	@FindBy(id = "edit-name")
 	WebElement username;
@@ -54,6 +56,59 @@ public class cotyAdminPage {
 	@FindBy(css = ".messages")
 	WebElement cmsStatusBar;
 	
+	@FindBy(id = "edit-title")
+	WebElement nameAtContact;
+	
+	@FindBy(id = "edit-field-location-type-und-0-value")
+	WebElement typeAtContact;
+	
+	@FindBy(id = "edit-field-address-und-0-street")
+	WebElement streetAtContact;
+	
+	@FindBy(id = "edit-field-address-und-0-city")
+	WebElement cityAtContact;
+	
+	@FindBy(id = "edit-field-address-und-0-province")
+	WebElement stateAtContact;
+	
+	@FindBy(id = "edit-field-address-und-0-postal-code")
+	WebElement postalAtContact;
+	
+	@FindBy(id = "edit-field-address-und-0-country")
+	WebElement countryAtContact;
+	
+	@FindBy(id = "edit-field-phone-und-0-value")
+	WebElement phoneAtContact;
+	
+	@FindBy(id = "edit-field-street-name-und-0-value")
+	WebElement streetNameAtContact;
+	
+	@FindBy(id = "edit-field-street-number-und-0-value")
+	WebElement streetNumberAtContact;
+	
+	@FindBy(id = "edit-field-latitude-coty-und-0-value")
+	WebElement latitudeAtContact;
+	
+	@FindBy(id = "edit-field-longitude-coty-und-0-value")
+	WebElement longitudeAtContact;
+	
+	@FindBy(xpath = "//li[contains(text(), 'Name field is required')]")
+	WebElement nameErrorMessage;
+	
+	@FindBy(xpath = "//li[contains(text(), 'Street name field is required')]")
+	WebElement streetErrorMessage;
+	
+	@FindBy(xpath = "//li[contains(text(), 'Please enter the latitude')]")
+	WebElement latitudeErrorMessage;
+	
+	@FindBy(xpath = "//li[contains(text(), 'Please enter the longitude')]")
+	WebElement longitudeErrorMessage;
+	
+	@FindBy(className = "agree-button")
+	WebElement cookiesOkButton;
+
+	@FindBy(id = "edit-latitude-longitude")
+	WebElement getlatitudeButton;
 
 	public cotyAdminPage(WebDriver driver) {
 		this.driver = driver;
@@ -169,7 +224,6 @@ public class cotyAdminPage {
 		
 	}
 
-
 	public boolean verifySuccessfulSaveMessage() {
 		return cmsStatusBar.getText().equals("Meta has been saved");
 	}
@@ -177,6 +231,100 @@ public class cotyAdminPage {
 	public boolean verifySuccessfulDeleteMessage() {
 		return cmsStatusBar.getText().equals("Meta has been deleted");
 	}
+
+
+	public void NavigateToCotyLocation(String cotyUrl) {
+		 driver.get(cotyUrl+"/node/add/coty-location");
+		
+	}
+
+	public void verifyFieldsAvailableAtCotyLocationPage() {
+		nameAtContact.isDisplayed();
+		typeAtContact.isDisplayed();
+		streetAtContact.isDisplayed();
+		cityAtContact.isDisplayed();
+		stateAtContact.isDisplayed();
+		postalAtContact.isDisplayed();
+		countryAtContact.isDisplayed();
+		phoneAtContact.isDisplayed();
+		streetNameAtContact.isDisplayed();
+		streetNumberAtContact.isDisplayed();
+		latitudeAtContact.isDisplayed();
+		longitudeAtContact.isDisplayed();
+	}
+
+
+	public void clickOnContactSaveButton() throws InterruptedException {
+		js.executeScript("arguments[0].scrollIntoView(true);",loginbutton);
+		Thread.sleep(1000);			
+		loginbutton.click();
+		
+	}
+
+
+	public void verifyMandatoryContactsFieldsErrorMessage() {
+		nameErrorMessage.isDisplayed();
+		streetErrorMessage.isDisplayed();
+		latitudeErrorMessage.isDisplayed();
+		longitudeErrorMessage.isDisplayed();
+		
+	}
+
+
+	public void clickOnCookiedAgreeButton() throws InterruptedException {
+		Thread.sleep(1000);
+		cookiesOkButton.click();
+	}
+
+	public void clickOnGetLatitudeLongitudeButton() {
+		getlatitudeButton.click();
+	}
+	
+	public void enterStreetDetail(String street) {
+		streetAtContact.sendKeys(street);
+	}
+
+	public void enterCity(String city) {
+		cityAtContact.sendKeys(city);
+	}
+
+
+	public void enterPostalCode(String code) {
+		postalAtContact.sendKeys(code);
+	}
+
+
+	public void enterStreetNumber(String num) {
+		streetNumberAtContact.sendKeys(num);
+	}
+
+
+	public void enterStreetName(String name) {
+		streetNameAtContact.sendKeys(name);
+		
+	}
+
+
+	public String verifyAutoPopulatedLatitude() {
+		return null;
+	}
+
+
+	public String verifyAutoPopulatedLongitude() {
+	
+		return null;
+	}
+
+
+	public void enterLocationName(String name) {
+		nameAtContact.sendKeys(name);
+		
+	}
+	
+	public String getSuccessfulSaveMessage() {
+		return cmsStatusBar.getText();
+	}
+
 	
 	
 
