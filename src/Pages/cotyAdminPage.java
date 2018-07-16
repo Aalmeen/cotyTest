@@ -6,13 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class cotyAdminPage {
 	
 	public WebDriver driver;
-	JavascriptExecutor js = ((JavascriptExecutor) driver);
+	
 
 	@FindBy(id = "edit-name")
 	WebElement username;
@@ -109,6 +110,30 @@ public class cotyAdminPage {
 
 	@FindBy(id = "edit-latitude-longitude")
 	WebElement getlatitudeButton;
+	
+	@FindBy(id = "edit-field-latitude-coty-und-0-value")
+	WebElement latitudeBox;	
+	
+	@FindBy(id = "edit-field-longitude-coty-und-0-value")
+	WebElement longitudeBox;
+	
+	@FindBy(xpath = "//a[contains(text(), 'Coty Sunnyvale USA')]")
+	WebElement addressInList;
+	
+	@FindBy(xpath = "//a[contains(text(), 'delete')]")
+	WebElement deleteAddress;
+	
+	@FindBy(id = "edit-feeds-feedsfilefetcher-upload")
+	WebElement uploadFile;
+	
+	@FindBy(xpath = "//*[contains(@id, 'edit-nodes')]")
+	WebElement addressCheckBox;
+	
+	@FindBy(className = "edit-operation")
+	WebElement selectDropDown;
+	
+	@FindBy(id = "edit-submit--2")
+	WebElement updateButton;
 
 	public cotyAdminPage(WebDriver driver) {
 		this.driver = driver;
@@ -119,7 +144,7 @@ public class cotyAdminPage {
 	public void loginAsAdmin(String user, String password) {
 		username.sendKeys(user);
 		passWord.sendKeys(password);
-		loginbutton.click();
+		clickOnSubmitButton();
 		
 	}
 
@@ -254,9 +279,15 @@ public class cotyAdminPage {
 	}
 
 
-	public void clickOnContactSaveButton() throws InterruptedException {
+	public void scrollDownAndclickOnSubmitButton() throws InterruptedException {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].scrollIntoView(true);",loginbutton);
 		Thread.sleep(1000);			
+		clickOnSubmitButton();
+		
+	}
+	
+	public void clickOnSubmitButton() {
 		loginbutton.click();
 		
 	}
@@ -305,14 +336,19 @@ public class cotyAdminPage {
 	}
 
 
-	public String verifyAutoPopulatedLatitude() {
-		return null;
+	public String verifyAutoPopulatedLatitude() throws InterruptedException {
+		Thread.sleep(2000);
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		String str = (String) js.executeScript("return jQuery('#edit-field-latitude-coty-und-0-value').val()","");
+		return str;
 	}
 
 
-	public String verifyAutoPopulatedLongitude() {
-	
-		return null;
+	public String verifyAutoPopulatedLongitude() throws InterruptedException {
+		Thread.sleep(1000);
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		String str = (String) js.executeScript("return jQuery('#edit-field-longitude-coty-und-0-value').val()","");
+		return str;
 	}
 
 
@@ -321,9 +357,63 @@ public class cotyAdminPage {
 		
 	}
 	
-	public String getSuccessfulSaveMessage() {
+	public String getCmsStatusMessage() {
+		String str = cmsStatusBar.getText();
 		return cmsStatusBar.getText();
 	}
+
+
+	public void navigateToAdminContent(String cotyUrl) {
+		driver.get(cotyUrl+"/admin/content");
+		
+	}
+
+
+	public void verifyAddedAddressInList(String string) {
+		addressInList.isDisplayed();
+		
+	}
+
+
+	public void deleteAddressFromList() {
+		deleteAddress.click();
+		clickOnSubmitButton();
+		
+	}
+
+
+	public void NavigateToImportCotyLocation(String cotyUrl) {
+		driver.get(cotyUrl+"/import/coty_locatiom");
+		
+	}
+
+
+	public void selectFileToImport() {
+		uploadFile.sendKeys(System.getProperty("user.dir") + "\\resources\\Test_coty_location.csv");
+		
+	}
+
+
+	public void selectCheckBox(int count) {
+		for (int i =0; i< count; i++)
+			addressCheckBox.click();
+		
+	}
+
+
+	public void selectDropDownToDelete() {
+		Select dropdown = new Select(selectDropDown);
+		dropdown.selectByVisibleText("Delete selected content");
+		
+	}
+
+
+	public void clickOnUpdateButton() {
+		updateButton.click();
+	}
+
+
+	
 
 	
 	

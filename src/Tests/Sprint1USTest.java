@@ -87,45 +87,76 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 //			System.out.println(e);
 //		}
 //	}
-	
-	@Test(description = "Verify coty contact us configured in the website")
-	public void verifyContactUsValidation() {
+//	
+//	@Test(description = "Verify coty contact us configured in the website")
+//	public void verifyContactUsValidation() {
+//		cotyAdminPage cap = new cotyAdminPage(driver);
+//
+//		try {
+//			launchCotyAdminUrl();
+//			cap.loginAsAdmin(user, password);
+//			cap.NavigateToCotyLocation(cotyUrl);
+//			cap.clickOnCookiedAgreeButton();
+//			cap.verifyFieldsAvailableAtCotyLocationPage();
+//			cap.clickOnContactSaveButton();
+//			cap.verifyMandatoryContactsFieldsErrorMessage();
+//			cap.enterLocationName("Coty Sunnyvale USA");
+//			cap.clickOnGetLatitudeLongitudeButton();
+//			Assert.assertEquals(getAlertMessage(), "Please enter the Street", "Alert message for street verified");
+//			acceptAlert();
+//			cap.enterStreetDetail("Hermosa Ave");
+//			cap.clickOnGetLatitudeLongitudeButton();
+//			Assert.assertEquals(getAlertMessage(), "Please enter City", "Alert message for city is verified");
+//			acceptAlert();
+//			cap.enterCity("Sunnyvale");
+//			cap.clickOnGetLatitudeLongitudeButton();
+//			Assert.assertEquals(getAlertMessage(), "Please enter Postal Code", "Alert message for postal code is verified");
+//			acceptAlert();
+//			cap.enterPostalCode("94085");
+//			cap.clickOnGetLatitudeLongitudeButton();
+//			Assert.assertEquals(getAlertMessage(), "Please enter Street Name", "Alert message for street name is verified");
+//			acceptAlert();
+//			cap.enterStreetName("Potrero Ave");
+//			cap.clickOnGetLatitudeLongitudeButton();
+//			Assert.assertEquals(getAlertMessage(), "Please enter Street Number", "Alert message for street number is verified");
+//			acceptAlert();
+//			cap.enterStreetNumber("330");
+//			cap.clickOnGetLatitudeLongitudeButton();
+//			Assert.assertEquals("37.386643", cap.verifyAutoPopulatedLatitude(), "auto populated latitude is verified");
+//			Assert.assertEquals("-122.037673", cap.verifyAutoPopulatedLongitude(), "auto populated latitude is verified");
+//			cap.clickOnContactSaveButton();
+//			Assert.assertEquals("Coty Location Coty Sunnyvale USA has been created.", cap.getSuccessfulSaveMessage(), "auto populated latitude is verified");
+//			cap.navigateToAdminContent(cotyUrl);
+//			cap.verifyAddedAddressInList("Coty Sunnyvale USA");
+//			cap.deleteAddressFromList();
+//			Assert.assertTrue(cap.getSuccessfulSaveMessage().contains("Coty Location Coty Sunnyvale USA has been deleted."), "Coty address has been deleted");
+//			
+//						
+//		} catch (Exception e) {
+//			System.out.println(e);
+//		}
+//	}
+//	
+	@Test(description = "Verify coty import contact location functionality")
+	public void verifyContactUsImportFunctionality() {
 		cotyAdminPage cap = new cotyAdminPage(driver);
 
 		try {
 			launchCotyAdminUrl();
 			cap.loginAsAdmin(user, password);
-			cap.NavigateToCotyLocation(cotyUrl);
+			cap.NavigateToImportCotyLocation(cotyUrl);
 			cap.clickOnCookiedAgreeButton();
-			cap.verifyFieldsAvailableAtCotyLocationPage();
-			cap.clickOnContactSaveButton();
-			cap.verifyMandatoryContactsFieldsErrorMessage();
-			cap.enterLocationName("Coty Sunnyvale USA");
-			cap.clickOnGetLatitudeLongitudeButton();
-			Assert.assertEquals(getAlertMessage(), "Please enter the Street", "Alert message for street verified");
-			acceptAlert();
-			cap.enterStreetDetail("Hermosa Ave");
-			cap.clickOnGetLatitudeLongitudeButton();
-			Assert.assertEquals(getAlertMessage(), "Please enter City", "Alert message for city is verified");
-			acceptAlert();
-			cap.enterCity("Sunnyvale");
-			cap.clickOnGetLatitudeLongitudeButton();
-			Assert.assertEquals(getAlertMessage(), "Please enter Postal Code", "Alert message for postal code is verified");
-			acceptAlert();
-			cap.enterPostalCode("94085");
-			cap.clickOnGetLatitudeLongitudeButton();
-			Assert.assertEquals(getAlertMessage(), "Please enter Street Number", "Alert message for street number is verified");
-			acceptAlert();
-			cap.enterStreetNumber("330");
-			cap.clickOnGetLatitudeLongitudeButton();
-			Assert.assertEquals(getAlertMessage(), "Please enter Street Name", "Alert message for street name is verified");
-			acceptAlert();
-			cap.enterStreetName("Potrero Ave");
-			cap.clickOnGetLatitudeLongitudeButton();
-			Assert.assertEquals("", cap.verifyAutoPopulatedLatitude(), "auto populated latitude is verified");
-			Assert.assertEquals("", cap.verifyAutoPopulatedLongitude(), "auto populated latitude is verified");
-			cap.clickOnContactSaveButton();
-			Assert.assertEquals("", cap.getSuccessfulSaveMessage(), "auto populated latitude is verified");
+			cap.scrollDownAndclickOnSubmitButton();
+			Assert.assertTrue(cap.getCmsStatusMessage().contains("Please upload a file."), "Error Message Not Displayed");
+			cap.selectFileToImport();
+			cap.scrollDownAndclickOnSubmitButton();
+			Assert.assertTrue(cap.getCmsStatusMessage().contains("Created 2 nodes."), "Success Message Not Displayed");
+			cap.navigateToAdminContent(cotyUrl);	
+			cap.selectCheckBox(2);
+			cap.selectDropDownToDelete();
+			cap.clickOnUpdateButton();
+			cap.clickOnSubmitButton();
+			Assert.assertTrue(cap.getCmsStatusMessage().contains("Deleted 2 posts."), "Coty address are not deleted");
 						
 		} catch (Exception e) {
 			System.out.println(e);

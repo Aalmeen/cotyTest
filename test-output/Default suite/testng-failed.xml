@@ -5,8 +5,8 @@
     <classes>
       <class name="Tests.Sprint1USTest">
         <methods>
-          <include name="verifySeoModuleConfiguration"/>
           <include name="tearDown"/>
+          <include name="verifyContactUsImportFunctionality"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Tests.Sprint1USTest -->
