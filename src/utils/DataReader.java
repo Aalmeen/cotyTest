@@ -1,8 +1,10 @@
 package utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,4 +58,20 @@ public class DataReader {
 		return list;
 	}
 
+	
+	public int getRowCountOfCSVFile() throws IOException
+	{
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\resources\\Test_coty_location.csv"));
+	     String input;
+	     int count = -1;
+	     while((input = bufferedReader.readLine()) != null)
+	     {
+	         count++;
+	     }
+
+	     System.out.println("Count : "+count);
+
+		return count;
+		
+	}
 }

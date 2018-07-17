@@ -1,5 +1,8 @@
 package Pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -129,7 +132,7 @@ public class cotyAdminPage {
 	@FindBy(xpath = "//*[contains(@id, 'edit-nodes')]")
 	WebElement addressCheckBox;
 	
-	@FindBy(className = "edit-operation")
+	@FindBy(id = "edit-operation")
 	WebElement selectDropDown;
 	
 	@FindBy(id = "edit-submit--2")
@@ -358,7 +361,8 @@ public class cotyAdminPage {
 	}
 	
 	public String getCmsStatusMessage() {
-		String str = cmsStatusBar.getText();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(cmsStatusBar));
 		return cmsStatusBar.getText();
 	}
 
@@ -395,8 +399,9 @@ public class cotyAdminPage {
 
 
 	public void selectCheckBox(int count) {
+		List<WebElement> li= driver.findElements(By.xpath("//*[contains(@id, 'edit-nodes')]"));
 		for (int i =0; i< count; i++)
-			addressCheckBox.click();
+			li.get(i).click();
 		
 	}
 

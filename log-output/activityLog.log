@@ -1,2 +1,12 @@
-16 Jul 2018 18:05:54,390 main - Chrome driver instantiated
-16 Jul 2018 18:06:01,030 main - Coty Admin Web application launched
+17 Jul 2018 17:38:21,560 main - Chrome driver instantiated
+17 Jul 2018 17:38:28,185 main - Coty Web application launched
+17 Jul 2018 17:39:14,128 main - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+17 Jul 2018 17:39:14,130 main - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+17 Jul 2018 17:39:14,131 main - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+17 Jul 2018 17:39:14,132 main - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+17 Jul 2018 17:39:14,132 main - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/workspace/CotyTest/resources/extentreport-jars/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+17 Jul 2018 17:39:14,422 main - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+17 Jul 2018 17:39:14,422 main - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+17 Jul 2018 17:39:14,422 main - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+17 Jul 2018 17:39:14,422 main - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+17 Jul 2018 17:39:14,422 main - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/workspace/CotyTest/resources/extentreport-jars/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
