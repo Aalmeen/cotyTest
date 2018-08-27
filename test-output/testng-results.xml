@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="57347" started-at="2018-07-17T12:08:16Z" finished-at="2018-07-17T12:09:13Z">
+  <suite name="Default suite" duration-ms="283331" started-at="2018-08-17T10:51:50Z" finished-at="2018-08-17T10:56:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="57347" started-at="2018-07-17T12:08:16Z" finished-at="2018-07-17T12:09:13Z">
-      <class name="Tests.supportTicketTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.supportTicketTest@af26ee]" name="setUp" is-config="true" duration-ms="6374" started-at="2018-07-17T12:08:16Z" finished-at="2018-07-17T12:08:22Z">
+    <test name="Default test" duration-ms="283331" started-at="2018-08-17T10:51:50Z" finished-at="2018-08-17T10:56:33Z">
+      <class name="Tests.Sprint2USTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.Sprint2USTest@1e8284b]" name="setUp" is-config="true" duration-ms="5559" started-at="2018-08-17T10:51:50Z" finished-at="2018-08-17T10:51:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyFooterLinksOnAllPages()[pri:0, instance:Tests.supportTicketTest@af26ee]" name="verifyFooterLinksOnAllPages" duration-ms="50932" started-at="2018-07-17T12:08:22Z" description="Verify SEO module is not displayed for non admin user" finished-at="2018-07-17T12:09:13Z">
+        <test-method status="PASS" signature="verifyFixNavigation()[pri:0, instance:Tests.Sprint2USTest@1e8284b]" name="verifyFixNavigation" duration-ms="276797" started-at="2018-08-17T10:51:55Z" description="Implementation of one-click to access the hubs" finished-at="2018-08-17T10:56:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFooterLinksOnAllPages -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.supportTicketTest@af26ee]" name="tearDown" is-config="true" duration-ms="1" started-at="2018-07-17T12:09:13Z" finished-at="2018-07-17T12:09:13Z">
+        </test-method> <!-- verifyFixNavigation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.Sprint2USTest@1e8284b]" name="tearDown" is-config="true" duration-ms="928" started-at="2018-08-17T10:56:32Z" finished-at="2018-08-17T10:56:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Tests.supportTicketTest -->
+      </class> <!-- Tests.Sprint2USTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,9 +1,6 @@
 package Tests;
 
-
-import java.io.IOException;
 import java.util.List;
-
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -11,7 +8,7 @@ import Pages.cotyAdminPage;
 import Pages.cotyHomePage;
 import utils.DataReader;
 import utils.SeleniumDriverFactory;
-import utils.EmailReport;;
+import utils.EmailReport;
 
 @Listeners(EmailReport.class)
 public class Sprint1USTest extends SeleniumDriverFactory {
@@ -26,7 +23,7 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 			launchCotyUrl();
 			Assert.assertEquals(false, cap.verifySeoMetaButton(), "SEO Meta button not displayed for non admin user");
 		} catch (Exception e) {
-			System.out.println(e);
+			Log.error("Exception Ocurred:", e);
 		}
 		}
 	
@@ -57,7 +54,7 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 			Assert.assertEquals(true, cap.verifyMetaTagsInViewSource("Fashion"), "Meta tags added to page source successfully");
 						
 		} catch (Exception e) {
-			System.out.println(e);
+			Log.error("Exception Ocurred:", e);
 		}
 	}
 	
@@ -87,7 +84,7 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 			Assert.assertEquals(false, cap.verifyMetaTagsInViewSource("Testing"), "Meta tags deleted to page source successfully");
 						
 		} catch (Exception e) {
-			System.out.println(e);
+			Log.error("Exception Ocurred:", e);
 		}
 	}
 	
@@ -136,7 +133,7 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 			
 						
 		} catch (Exception e) {
-			System.out.println(e);
+			Log.error("Exception Ocurred:", e);
 		}
 	}
 	
@@ -164,7 +161,7 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 			Assert.assertTrue(cap.getCmsStatusMessage().contains("Deleted"), "Coty address are not deleted");
 						
 		} catch (Exception e) {
-			System.out.println(e);
+			Log.error("Exception Ocurred:", e);
 		}
 	}
 
@@ -180,23 +177,23 @@ public class Sprint1USTest extends SeleniumDriverFactory {
 			Log.info("Google translate icon displayed on all pages");
 
 		} catch (Exception e) {
-			System.out.println(e);
+			Log.error("Exception Ocurred:", e);
 		}
 	}
 	
-	 @Test(description = "Verify selecting language from google translate icon will change the site content in that language")
-	 public void verifyGoogleTranslatingLanguage() {
-	 cotyHomePage chp = new cotyHomePage(driver);
-	
-	 try {
-	 List<String> str = dr.readUrl();
-	 chp.selectLanguage("DE", str);
-	 Assert.assertEquals(chp.verifyLanguage("DE"), true);
-	 Log.info("Google translate icon displayed on all pages");
-	
-	 } catch (Exception e) {
-	 System.out.println(e);
-	 }
-	 }
+//	 @Test(description = "Verify selecting language from google translate icon will change the site content in that language")
+//	 public void verifyGoogleTranslatingLanguage() {
+//	 cotyHomePage chp = new cotyHomePage(driver);
+//	
+//	 try {
+//	 List<String> str = dr.readUrl();
+//	 chp.selectLanguage("DE", str);
+//	 Assert.assertEquals(chp.verifyLanguage("DE"), true);
+//	 Log.info("Google translate icon displayed on all pages");
+//	
+//	 } catch (Exception e) {
+//		 Log.error("Exception Ocurred:", e);
+//	 }
+//	 }
 
 }

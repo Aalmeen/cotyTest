@@ -5,8 +5,9 @@
     <classes>
       <class name="Tests.Sprint1USTest">
         <methods>
+          <include name="verifyGoogleTranslatingLanguage"/>
+          <include name="verifySeoModuleForNonAdmin"/>
           <include name="tearDown"/>
-          <include name="verifyContactUsImportFunctionality"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Tests.Sprint1USTest -->

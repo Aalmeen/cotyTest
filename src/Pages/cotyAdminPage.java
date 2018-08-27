@@ -2,6 +2,7 @@ package Pages;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,11 +13,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.SeleniumDriverFactory;
+
 
 public class cotyAdminPage {
 	
 	public WebDriver driver;
-	
+	public Logger Log = Logger.getLogger(SeleniumDriverFactory.class.getName());
 
 	@FindBy(id = "edit-name")
 	WebElement username;
@@ -146,9 +149,11 @@ public class cotyAdminPage {
 
 	public void loginAsAdmin(String user, String password) {
 		username.sendKeys(user);
+		Log.info("user name entered");
 		passWord.sendKeys(password);
+		Log.info("Password enetered");
 		clickOnSubmitButton();
-		
+		Log.info("Click on submit button");	
 	}
 
 
