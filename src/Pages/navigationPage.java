@@ -47,12 +47,17 @@ public class navigationPage {
 	@FindBy(xpath = "//a[contains(text(), 'Join us')]")
 	WebElement JoinUsLink;
 	
+	@FindBy(xpath = "//a[contains(text(), 'In the news')]")
+	WebElement inTheNews;
+	
 	@FindBy(css = ".arrow")
 	WebElement backtoMainMenu;
 	
 	@FindBy(xpath = "//*[@id='block-menu-menu-footer-menu']/ul/li[4]/a")
 	WebElement transparency;
 
+	@FindBy(css = "div.views-row:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1)")
+	WebElement firstDisplayedNews;
 
 	public navigationPage(WebDriver driver) {
 		this.driver = driver;
@@ -190,6 +195,46 @@ public class navigationPage {
 
 	public void clickOnJoinUs() {
 		JoinUsLink.click();		
+	}
+
+	public void verifyCTAOnOurStoryBanner() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clickOnCTAofOurStoryBanner() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void verifyCTAOnOurFounderBanner() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clickOnCTAOnOurFounderBanner() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void verifyCTAOnStrategyBanner() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clickOnCTAofStrategyBanner() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clickOnInTheNewsLink() {
+		inTheNews.click();
+		
+	}
+
+
+	public boolean verifyNewsPriortrized(String str) {
+		return firstDisplayedNews.getText().contains(str);
 	}
 
 }

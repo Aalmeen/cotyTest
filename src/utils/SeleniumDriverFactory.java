@@ -24,7 +24,7 @@ public class SeleniumDriverFactory {
 
 	PropertyReader prop = new PropertyReader();
 	String Browser = prop.readConfigFile("Browser");
-	protected String cotyUrl = prop.readConfigFile("ProductionUrl");
+	protected String cotyUrl = prop.readConfigFile("StagingUrl");
 	protected String cotyAdminUrl = prop.readConfigFile("StagingCotyAdminUrl");
 	protected String user = prop.readConfigFile("AdminUser");
 	protected String password = prop.readConfigFile("AdminPassword");

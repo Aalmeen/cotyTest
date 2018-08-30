@@ -39,6 +39,30 @@ public class cotyAdminPage {
 	@FindBy(id = "edit-title")
 	WebElement titleTextBox;
 	
+	@FindBy(id = "edit-uid")
+	WebElement authorTextBox;
+	
+	@FindBy(id = "edit-keys")
+	WebElement contentTextBox;
+	
+	@FindBy(id = "edit-type")
+	WebElement typeDropDown;
+	
+	@FindBy(id = "edit-status")
+	WebElement publishedDropDown;
+	
+	@FindBy(id = "edit-date-filter-min-datepicker-popup-0")
+	WebElement createStartDate;
+	
+	@FindBy(id = "edit-date-filter-max-datepicker-popup-0")
+	WebElement createEndDate;
+	
+	@FindBy(id = "edit-date-filter-1-min-datepicker-popup-0")
+	WebElement updateStartdate;
+	
+	@FindBy(id = "edit-date-filter-1-max-datepicker-popup-0")
+	WebElement updateEndDate;
+	
 	@FindBy(css = ".form-item-title > label:nth-child(1)")
 	WebElement pageTitleLabel;
 	
@@ -140,6 +164,46 @@ public class cotyAdminPage {
 	
 	@FindBy(id = "edit-submit--2")
 	WebElement updateButton;
+	
+	@FindBy(css = "div.views-row:nth-child(3)")
+	WebElement subNewsLink;
+	
+	@FindBy(xpath = "//a[contains(text(), 'Edit')]")
+	WebElement editCMS;	
+	
+	@FindBy(id = "edit-field-news-priority-und")
+	WebElement newsPriorityDropDown;
+	
+	@FindBy(id = "edit-cron")
+	WebElement indexQueueButton;
+	
+	@FindBy(id = "edit-submit-admin-views-node")
+	WebElement applyButton;
+	
+	@FindBy(css = ".odd > td:nth-child(7)")
+	WebElement createdRowValue;
+	
+	@FindBy(css = ".odd > td:nth-child(6)")
+	WebElement updatedRowValue;
+	
+	@FindBy(xpath = "//strong[contains(text(), 'Scheduling options')]")
+	WebElement sheduleContentOption;
+	
+	@FindBy(xpath = "//Span[@class='summary']/following-sibling::strong[contains(text(), 'Scheduling options')]")
+	WebElement sheduleContentText;
+	
+	@FindBy(id = "edit-publish-on-datepicker-popup-0")
+	WebElement publishDate;
+	
+	@FindBy(css = "edit-publish-on-timeEntry-popup-1")
+	WebElement publishTime;
+	
+	@FindBy(css = ".odd > td:nth-child(6)")
+	WebElement unpublishDate;
+	
+	@FindBy(css = ".odd > td:nth-child(6)")
+	WebElement unpublishTime;
+	
 
 	public cotyAdminPage(WebDriver driver) {
 		this.driver = driver;
@@ -423,9 +487,115 @@ public class cotyAdminPage {
 	}
 
 
-	
+	public void clickOnSubNewsLink() {
+		subNewsLink.click();
+		
+	}
 
-	
-	
+
+	public void clickOnEditButton() {
+		editCMS.click();
+		
+	}
+
+
+	public void selectNewsPriority(String i) {
+		Select dropdown = new Select(selectDropDown);
+		dropdown.selectByVisibleText(i);		
+	}
+
+
+	public Object verifyNewsPriorityDropDown() throws InterruptedException {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].scrollIntoView(true);",newsPriorityDropDown);
+		Thread.sleep(1000);		
+		return newsPriorityDropDown.isDisplayed();
+	}
+
+
+	public void runApacheSolr(String cotyUrl) {
+		driver.get(cotyUrl+"admin/config/search/apachesolr/settings/solr/index");
+		clickOnIndexQueueContent();
+		clickOnSubmitButton();
+		
+	}
+
+
+	private void clickOnIndexQueueContent() {
+		indexQueueButton.click();		
+	}
+
+
+	public void verifyAvailableSearchFields() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(titleTextBox));
+		titleTextBox.isDisplayed();
+		authorTextBox.isDisplayed();
+		contentTextBox.isDisplayed();
+		typeDropDown.isDisplayed();
+		publishedDropDown.isDisplayed();
+		createStartDate.isDisplayed();
+		createEndDate.isDisplayed();
+		updateStartdate.isDisplayed();
+		updateEndDate.isDisplayed();
+	}
+
+
+	public void enterCreatedStartDate(String str) {
+		createStartDate.sendKeys(str);		
+	}
+
+
+	public void clickOnApplyButton() {
+		applyButton.click();
+				
+	}
+
+
+	public boolean verifySearchResultForCreatedDate(String str) throws InterruptedException {
+		Thread.sleep(2000);
+		String str2 = createdRowValue.getText();
+		return str2.contains(str);
+	}
+
+	public boolean verifySearchResultForUpdatedDate(String str) throws InterruptedException {
+		Thread.sleep(2000);
+		String str2 = updatedRowValue.getText();
+		return str2.contains(str);
+	}
+
+
+	public void enterCreatedEndDate(String str) {
+		createEndDate.sendKeys(str);
+		
+	}
+
+
+	public void enterUpdatedStartDate(String str) {
+		updateStartdate.sendKeys(str);
+		
+	}
+
+
+	public void enterUpdatedEndDate(String str) {
+		updateEndDate.sendKeys(str);
+		
+	}
+
+
+	public void clickOnScheduleOptionTab() throws InterruptedException {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].scrollIntoView(true);",sheduleContentOption);
+		Thread.sleep(1000);			
+		sheduleContentOption.click();
+		
+	}
+
+
+	public Object verifyScheduleOptionText() {
+		String str = sheduleContentText.getText();
+		return str.contains("Not scheduled");
+	}
+
 
 }
