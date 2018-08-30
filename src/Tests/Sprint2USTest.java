@@ -55,7 +55,13 @@ public class Sprint2USTest extends SeleniumDriverFactory{
 			cap.clickOnHomeIcon();
 			cap.clickOnEditButton();
 			cap.clickOnScheduleOptionTab();
-			Assert.assertEquals(cap.verifyScheduleOptionText(), true, "Text not matching with Not scheduled");
+			Assert.assertEquals(cap.verifyScheduleOptionText(), "", "Text not matching with Not scheduled");
+			cap.enterPublishDate("");
+			cap.clickOnSubmitButton();
+			Assert.assertEquals(cap.verifyErrorMessage(), "", "Error message does not display for scheduling content");
+			cap.enterPublishTime("");
+			Assert.assertEquals(cap.verifyScheduleOptionText(), "", "Text not matching with Scheduled for publishing");
+			cap.clickOnSubmitButton();
 			
 		} catch (Exception e) {
 			Log.error("Exception Ocurred:", e);

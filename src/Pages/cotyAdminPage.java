@@ -198,10 +198,10 @@ public class cotyAdminPage {
 	@FindBy(css = "edit-publish-on-timeEntry-popup-1")
 	WebElement publishTime;
 	
-	@FindBy(css = ".odd > td:nth-child(6)")
+	@FindBy(css = "edit-unpublish-on-datepicker-popup-0")
 	WebElement unpublishDate;
 	
-	@FindBy(css = ".odd > td:nth-child(6)")
+	@FindBy(css = "edit-unpublish-on-timeEntry-popup-1")
 	WebElement unpublishTime;
 	
 
@@ -592,9 +592,27 @@ public class cotyAdminPage {
 	}
 
 
-	public Object verifyScheduleOptionText() {
+	public String verifyScheduleOptionText() {
 		String str = sheduleContentText.getText();
-		return str.contains("Not scheduled");
+		return str;
+	}
+
+
+	public void enterPublishDate(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public String verifyErrorMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void enterPublishTime(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
