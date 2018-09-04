@@ -68,6 +68,18 @@ public class navigationPage {
 	@FindBy(css = "a.social-icon:nth-child(3)")
 	WebElement linkedInFooter;
 	
+	@FindBy(css = ".field--name-field-twitter-in-page")
+	WebElement twitterC4;
+	
+	@FindBy(css = ".field--name-field-instagram-in-page")
+	WebElement instagramC4;
+	
+	@FindBy(css = ".field--name-field-linked-in-page")
+	WebElement linkedC4;
+	
+	@FindBy(css = ".field--name-field-facebook-page")
+	WebElement facebookC4;
+	
 	public navigationPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -272,6 +284,18 @@ public class navigationPage {
 				Log.info("terms and provacy link into footer is not enabled");
 			}
 		}
+	}
+	
+	public void NavigateToPageHavingC4Component(String cotyUrl) {
+		driver.get(cotyUrl+"in-the-news/voices/renowed-makeup-artist-gives-us-the-latest-trends-in-singapore");
+		
+	}
+
+	public void verifySocialMediaLinksOnC4() {
+		twitterC4.isDisplayed();
+		facebookC4.isDisplayed();
+		linkedC4.isDisplayed();
+		instagramC4.isDisplayed();		
 	}
 
 }

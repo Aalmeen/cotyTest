@@ -5,8 +5,9 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import Pages.cotyAdminPage;
 import Pages.navigationPage;
-import utils.DataReader;
 import utils.SeleniumDriverFactory;
 import utils.EmailReport;
 
@@ -46,9 +47,11 @@ public class Sprint3USTest extends SeleniumDriverFactory{
 	@Test(description = "Verify all the social media links in the footer section")
 	public void verifySocialMediaLinkOnFooter() {
 		navigationPage nav = new navigationPage(driver);
+		cotyAdminPage cap = new cotyAdminPage(driver);
 
 		try {
 			launchCotyUrl();
+			cap.clickOnCookiedAgreeButton();
 			List<String> str = new ArrayList<String>();
 			str = nav.getUrls(str);
 			nav.verifySocialMediaLinksOnAllPagesFooter(cotyUrl, str);
@@ -57,5 +60,22 @@ public class Sprint3USTest extends SeleniumDriverFactory{
 			Log.error("Exception Ocurred:", e);
 		}
 		}
+	
+	@Test(description = "Verify all the social media links in C4 component")
+	public void verifySocialMediaLinkInC4() {
+		navigationPage nav = new navigationPage(driver);
+		cotyAdminPage cap = new cotyAdminPage(driver);
+
+		try {
+			launchCotyUrl();
+			cap.clickOnCookiedAgreeButton();
+			nav.NavigateToPageHavingC4Component(cotyUrl);
+			nav.verifySocialMediaLinksOnC4();
+			
+		} catch (Exception e) {
+			Log.error("Exception Ocurred:", e);
+		}
+		}
+
 
 }

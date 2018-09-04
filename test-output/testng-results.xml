@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="669940" started-at="2018-09-04T10:24:25Z" finished-at="2018-09-04T10:35:35Z">
+  <suite name="Default suite" duration-ms="20528" started-at="2018-09-04T12:22:19Z" finished-at="2018-09-04T12:22:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="669940" started-at="2018-09-04T10:24:25Z" finished-at="2018-09-04T10:35:35Z">
+    <test name="Default test" duration-ms="20528" started-at="2018-09-04T12:22:19Z" finished-at="2018-09-04T12:22:40Z">
       <class name="Tests.Sprint3USTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="setUp" is-config="true" duration-ms="5263" started-at="2018-09-04T10:24:25Z" finished-at="2018-09-04T10:24:30Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="setUp" is-config="true" duration-ms="5224" started-at="2018-09-04T12:22:19Z" finished-at="2018-09-04T12:22:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifySocialMediaLinkOnFooter()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="verifySocialMediaLinkOnFooter" duration-ms="663328" started-at="2018-09-04T10:24:30Z" description="Verify all the social media links in the footer section" finished-at="2018-09-04T10:35:33Z">
+        <test-method status="PASS" signature="verifySocialMediaLinkInC4()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="verifySocialMediaLinkInC4" duration-ms="11462" started-at="2018-09-04T12:22:24Z" description="Verify all the social media links in C4 component" finished-at="2018-09-04T12:22:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySocialMediaLinkInC4 -->
+        <test-method status="PASS" signature="verifySocialMediaLinkOnFooter()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="verifySocialMediaLinkOnFooter" duration-ms="2897" started-at="2018-09-04T12:22:36Z" description="Verify all the social media links in the footer section" finished-at="2018-09-04T12:22:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySocialMediaLinkOnFooter -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="tearDown" is-config="true" duration-ms="1329" started-at="2018-09-04T10:35:33Z" finished-at="2018-09-04T10:35:35Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.Sprint3USTest@1e8284b]" name="tearDown" is-config="true" duration-ms="924" started-at="2018-09-04T12:22:39Z" finished-at="2018-09-04T12:22:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
