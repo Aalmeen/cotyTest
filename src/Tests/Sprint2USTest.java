@@ -28,7 +28,7 @@ public class Sprint2USTest extends SeleniumDriverFactory{
 //			nav.clickOnMenuIcon();
 //			nav.navigateBackToMaineMenuItem();
 //			nav.clickOnBrandsthatInspire();
-//			Assert.assertEquals(nav.getPageTitle(), "brands that inspire | coty.com", "Page not redirected to Brands that inspire page");
+//			Assert.assertEquals(nav.getPag eTitle(), "brands that inspire | coty.com", "Page not redirected to Brands that inspire page");
 //			nav.clickOnMenuIcon();
 //			nav.navigateBackToMaineMenuItem();
 //			nav.clickOnResponsibleGrowth();
@@ -98,7 +98,7 @@ public class Sprint2USTest extends SeleniumDriverFactory{
 //		navigationPage nav = new navigationPage(driver);
 //		cotyAdminPage cap = new cotyAdminPage(driver);
 //
-//		try {
+//		try {                                                                  
 //			launchCotyAdminUrl();
 //			cap.loginAsAdmin(user, password);
 //			cap.clickOnHomeIcon();

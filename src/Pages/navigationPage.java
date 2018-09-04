@@ -59,6 +59,15 @@ public class navigationPage {
 	@FindBy(css = "div.views-row:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1)")
 	WebElement firstDisplayedNews;
 
+	@FindBy(css = "a.social-icon:nth-child(1)")
+	WebElement twitterFooter;
+	
+	@FindBy(css = "a.social-icon:nth-child(2)")
+	WebElement instagramFooter;
+	
+	@FindBy(css = "a.social-icon:nth-child(3)")
+	WebElement linkedInFooter;
+	
 	public navigationPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -235,6 +244,34 @@ public class navigationPage {
 
 	public boolean verifyNewsPriortrized(String str) {
 		return firstDisplayedNews.getText().contains(str);
+	}
+	
+	public void verifySocialMediaLinksOnAllPagesFooter(String cotyUrl, List<String> str) {
+		for (int i = 0; i < str.size(); i++) {
+			driver.get(cotyUrl + str.get(i));
+			Log.info("Navigated to " + cotyUrl + str.get(i));
+			
+			if (twitterFooter.isDisplayed() && twitterFooter.isEnabled()) {
+				String url = twitterFooter.getAttribute("href");
+				verifyLinkActive(url);
+			} else {
+				Log.info("twitter link into footer is not enabled");
+			}
+			
+			if (instagramFooter.isDisplayed() && instagramFooter.isEnabled()) {
+				String url = instagramFooter.getAttribute("href");
+				verifyLinkActive(url);
+			} else {
+				Log.info("footer link into footer is not enabled");
+			}
+			
+			if (linkedInFooter.isDisplayed() && linkedInFooter.isEnabled()) {
+				String url = linkedInFooter.getAttribute("href");
+				verifyLinkActive(url);
+			} else {
+				Log.info("terms and provacy link into footer is not enabled");
+			}
+		}
 	}
 
 }

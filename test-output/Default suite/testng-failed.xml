@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.Sprint2USTest">
+      <class name="Tests.Sprint1USTest">
         <methods>
-          <include name="verifyAuthorCanScheduleContent"/>
+          <include name="verifySeoModuleForNonAdmin"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- Tests.Sprint2USTest -->
+      </class> <!-- Tests.Sprint1USTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
