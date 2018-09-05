@@ -13,6 +13,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import utils.SeleniumDriverFactory;
 
 public class navigationPage {
@@ -35,7 +38,7 @@ public class navigationPage {
 	@FindBy(css = "#burger-menu")
 	WebElement menuIcon;
 	
-	@FindBy(xpath = "//a[contains(text(), 'Our story')]")
+	@FindBy(xpath = "//a[@href='/our-story']")
 	WebElement ourStoryLink;
 	
 	@FindBy(xpath = "//a[contains(text(), 'Brands that inspire')]")
@@ -79,6 +82,12 @@ public class navigationPage {
 	
 	@FindBy(css = ".field--name-field-facebook-page")
 	WebElement facebookC4;
+	
+	@FindBy(xpath = "//div[@class='icon-arrow-circle'][1]")
+	WebElement ourStoryCTA;
+	
+	@FindBy(xpath = "//div[@class='icon-arrow-circle'][2]")
+	WebElement founderCTA;
 	
 	public navigationPage(WebDriver driver) {
 		this.driver = driver;
@@ -195,10 +204,13 @@ public class navigationPage {
 	}
 
 	public void clickOnOurStoryLink() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(ourStoryLink));
 		ourStoryLink.click();
 	}
 
 	public String getPageTitle() {
+		String str = driver.getTitle();
 		return driver.getTitle();
 	}
 
@@ -219,32 +231,32 @@ public class navigationPage {
 	}
 
 	public void verifyCTAOnOurStoryBanner() {
-		// TODO Auto-generated method stub
+		ourStoryCTA.isDisplayed();
 		
 	}
 
 	public void clickOnCTAofOurStoryBanner() {
-		// TODO Auto-generated method stub
+		ourStoryCTA.click();
 		
 	}
 
 	public void verifyCTAOnOurFounderBanner() {
-		// TODO Auto-generated method stub
+		founderCTA.isDisplayed();
 		
 	}
 
 	public void clickOnCTAOnOurFounderBanner() {
-		// TODO Auto-generated method stub
+		founderCTA.click();
 		
 	}
 
 	public void verifyCTAOnStrategyBanner() {
-		// TODO Auto-generated method stub
+		ourStoryCTA.isDisplayed();
 		
 	}
 
 	public void clickOnCTAofStrategyBanner() {
-		// TODO Auto-generated method stub
+		ourStoryCTA.click();
 		
 	}
 
