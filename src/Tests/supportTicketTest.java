@@ -49,5 +49,4 @@ public class supportTicketTest extends SeleniumDriverFactory {
 			driver.quit();
 		}
 	}
-
 }

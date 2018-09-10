@@ -22,8 +22,8 @@ public class Sprint3USTest extends SeleniumDriverFactory{
 		try {
 			launchCotyUrl();
 			cap.clickOnCookiedAgreeButton();
-			nav.clickOnMenuIcon();
-			nav.clickOnOurStoryLink();
+			nav.verifyCTAOnHomePage();
+			nav.clickOnCTAAtHomePage();
 			nav.verifyCTAOnOurStoryBanner();
 			nav.clickOnCTAofOurStoryBanner();
 			Assert.assertEquals(nav.getPageTitle(), "Our Purpose | coty.com", "Page not redirected to our purpose page");

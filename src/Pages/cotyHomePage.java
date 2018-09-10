@@ -2,14 +2,18 @@ package Pages;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.SeleniumDriverFactory;
+
 public class cotyHomePage {
 
 	public WebDriver driver;
+	public Logger Log = Logger.getLogger(SeleniumDriverFactory.class.getName());
 
 	@FindBy(id = "burger-menu")
 	WebElement menuIcon;
@@ -25,8 +29,7 @@ public class cotyHomePage {
 	public void verifymenuicon() {
 
 		menuIcon.isDisplayed();
-		System.out.println(driver.getCurrentUrl());
-		// Log.info("Menu icon displayed at home page");
+		Log.info("Menu icon displayed at home page");
 	}
 
 	public void verifyGTPlugin(String applicationURL, List<String> str) {
@@ -35,20 +38,20 @@ public class cotyHomePage {
 			driver.get(applicationURL + "/" + str.get(i));
 			clickMenuIcon();
 			verifyGTIcon();
-
+			Log.info("Verified Google Translate plugin Icon" + applicationURL + "/" + str.get(i));
 		}
 
 	}
 
 	private void verifyGTIcon() {
 		gtIcon.isDisplayed();
-		
+		Log.info("Verified google translate  icon");
 	}
 
 	private void clickMenuIcon() {
 		menuIcon.isDisplayed();
 		menuIcon.click();
-
+		Log.info("Clicked on Menu icon");
 	}
 
 	public void selectLanguage(String lang, List<String> str) {

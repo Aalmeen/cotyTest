@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\aalmeen.k\AppData\Local\Temp\testng-eclipse-1667075355\testng-customsuite.xml</span>
+                    <span>C:\Users\aalmeen.k\AppData\Local\Temp\testng-eclipse--1049292370\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Tests.Sprint3USTest" hash-for-method="verifySizeOfCTA">verifySizeOfCTA</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Tests.supportTicketTest" hash-for-method="getSessionID">getSessionID</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Tests.supportTicketTest" hash-for-method="verifyFooterLinksOnAllPages">verifyFooterLinksOnAllPages</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,16 +125,25 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Tests.Sprint3USTest</span>
+              <span class="class-name">Tests.supportTicketTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySizeOfCTA">
-                  </a> <!-- verifySizeOfCTA -->
-                  <span class="method-name">verifySizeOfCTA</span>
+                  <a name="getSessionID">
+                  </a> <!-- getSessionID -->
+                  <span class="method-name">getSessionID</span>
                   <em>
-(Verify size of CTA)                  </em>
+(Verify Session of cotywebsite)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFooterLinksOnAllPages">
+                  </a> <!-- verifyFooterLinksOnAllPages -->
+                  <span class="method-name">verifyFooterLinksOnAllPages</span>
+                  <em>
+(Verify footer links on all pages)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +151,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\aalmeen.k\AppData\Local\Temp\testng-eclipse-1667075355\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\aalmeen.k\AppData\Local\Temp\testng-eclipse--1049292370\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +160,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Tests.Sprint3USTest&quot;/&gt;
+      &lt;class name=&quot;Tests.supportTicketTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -186,16 +200,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifySizeOfCTA')
-data.setCell(0, 2, 'Tests.Sprint3USTest')
-data.setCell(0, 3, 300235);
+data.setCell(0, 1, 'getSessionID')
+data.setCell(0, 2, 'Tests.supportTicketTest')
+data.setCell(0, 3, 499874);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyFooterLinksOnAllPages')
+data.setCell(1, 2, 'Tests.supportTicketTest')
+data.setCell(1, 3, 15);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 8 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -221,18 +239,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Tests.Sprint3USTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Tests.supportTicketTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">verifySizeOfCTA</span>
-                <span class="method-start">5041 ms</span>
+                <span class="method-name">getSessionID</span>
+                <span class="method-start">5280 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFooterLinksOnAllPages</span>
+                <span class="method-start">505154 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">305279 ms</span>
+                <span class="method-start">505185 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -217,7 +217,7 @@ public class cotyAdminPage {
 		passWord.sendKeys(password);
 		Log.info("Password enetered");
 		clickOnSubmitButton();
-		Log.info("Click on submit button");	
+		Log.info("Clicked on submit button");	
 	}
 
 
@@ -225,6 +225,7 @@ public class cotyAdminPage {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(homeIcon));
 		homeIcon.click();
+		Log.info("Clicked on home icon");
 		
 	}
 
@@ -239,6 +240,7 @@ public class cotyAdminPage {
 
 	public void clickOnSeoMetaButton() {
 		seoMetaButton.click();
+		Log.info("Clicked on SEO meta button");
 		
 	}
 
@@ -256,6 +258,7 @@ public class cotyAdminPage {
 
 	public void clickOnSeoCloseButton() {
 		seoMetaButton.click();
+		Log.info("Clicked on SEO close button ");
 		
 	}
 
@@ -267,7 +270,7 @@ public class cotyAdminPage {
 
 	public void enterTitle(String testTitle) {
 		titleTextBox.sendKeys(testTitle);
-		
+		Log.info("Sent text to Title");
 	}
 
 
@@ -280,7 +283,7 @@ public class cotyAdminPage {
 
 	public void enterDescription(String testDescription) {
 		descriptionTextBox.sendKeys(testDescription);
-		
+		Log.info("Sent text to description box");
 	}
 
 
@@ -293,7 +296,7 @@ public class cotyAdminPage {
 
 	public void enterKeyword(String testKeyword) {
 		keyWordTextBox.sendKeys(testKeyword);
-		
+		Log.info("Sent text tokeyword box");
 	}
 
 
@@ -313,11 +316,12 @@ public class cotyAdminPage {
 
 	public void clickOnSeoSaveButton() {
 		seoSaveButton.click();
-		
+		Log.info("Clicked on Seo Save button");
 	}
 
 	public void clickOnSeoDeleteButton() {
 		seoDeleteButton.click();
+		Log.info("Clicked on Seo delete button");
 		
 	}
 
@@ -332,22 +336,34 @@ public class cotyAdminPage {
 
 	public void NavigateToCotyLocation(String cotyUrl) {
 		 driver.get(cotyUrl+"/node/add/coty-location");
-		
+		 Log.info("redirected to"  + cotyUrl +"/node/add/coty-location");
 	}
 
 	public void verifyFieldsAvailableAtCotyLocationPage() {
 		nameAtContact.isDisplayed();
+		Log.info("Name field displayed at contact ");
 		typeAtContact.isDisplayed();
+		Log.info("Type field displayed at contact");
 		streetAtContact.isDisplayed();
+		Log.info("street field displayed at contact");
 		cityAtContact.isDisplayed();
+		Log.info("city field displayed at contact");
 		stateAtContact.isDisplayed();
+		Log.info("state field displayed at state");
 		postalAtContact.isDisplayed();
+		Log.info("postal fiedl displayed at contact");
 		countryAtContact.isDisplayed();
+		Log.info("country field displayed at contact");
 		phoneAtContact.isDisplayed();
+		Log.info("phone field displayed at contact");
 		streetNameAtContact.isDisplayed();
+		Log.info("street name field displayed at contact");
 		streetNumberAtContact.isDisplayed();
+		Log.info("Street Number displayed at contact");
 		latitudeAtContact.isDisplayed();
+		Log.info("Latitude field displayed at contact ");
 		longitudeAtContact.isDisplayed();
+		Log.info("Longitude field displayed at contact");
 	}
 
 
@@ -356,11 +372,12 @@ public class cotyAdminPage {
 		js.executeScript("arguments[0].scrollIntoView(true);",loginbutton);
 		Thread.sleep(1000);			
 		clickOnSubmitButton();
-		
+		Log.info("clicked on submit button");
 	}
 	
 	public void clickOnSubmitButton() {
 		loginbutton.click();
+		Log.info("clicked on login button");
 		
 	}
 
@@ -370,6 +387,7 @@ public class cotyAdminPage {
 		streetErrorMessage.isDisplayed();
 		latitudeErrorMessage.isDisplayed();
 		longitudeErrorMessage.isDisplayed();
+		Log.info("Error message displayed for name, street, lattitude and longitude");
 		
 	}
 
@@ -377,33 +395,40 @@ public class cotyAdminPage {
 	public void clickOnCookiedAgreeButton() throws InterruptedException {
 		Thread.sleep(1000);
 		cookiesOkButton.click();
+		Log.info("clicked on Ok button for cookies ");
 	}
 
 	public void clickOnGetLatitudeLongitudeButton() {
 		getlatitudeButton.click();
+		Log.info("Clicked on get latitude button");
 	}
 	
 	public void enterStreetDetail(String street) {
 		streetAtContact.sendKeys(street);
+		Log.info("entered street number");
 	}
 
 	public void enterCity(String city) {
 		cityAtContact.sendKeys(city);
+		Log.info("entered city");
 	}
 
 
 	public void enterPostalCode(String code) {
 		postalAtContact.sendKeys(code);
+		Log.info("entered postal number at contact");
 	}
 
 
 	public void enterStreetNumber(String num) {
 		streetNumberAtContact.sendKeys(num);
+		Log.info("entered street number at contact");
 	}
 
 
 	public void enterStreetName(String name) {
 		streetNameAtContact.sendKeys(name);
+		Log.info("entered street name at contact");
 		
 	}
 
@@ -426,7 +451,7 @@ public class cotyAdminPage {
 
 	public void enterLocationName(String name) {
 		nameAtContact.sendKeys(name);
-		
+		Log.info("entered name at contact");
 	}
 	
 	public String getCmsStatusMessage() {
@@ -438,32 +463,32 @@ public class cotyAdminPage {
 
 	public void navigateToAdminContent(String cotyUrl) {
 		driver.get(cotyUrl+"/admin/content");
-		
+		Log.info("navigated to" + cotyUrl+"/admin/content");
 	}
 
 
 	public void verifyAddedAddressInList(String string) {
 		addressInList.isDisplayed();
-		
+		Log.info("entered address at contact");
 	}
 
 
 	public void deleteAddressFromList() {
 		deleteAddress.click();
 		clickOnSubmitButton();
-		
+		Log.info("deted address");
 	}
 
 
 	public void NavigateToImportCotyLocation(String cotyUrl) {
 		driver.get(cotyUrl+"/import/coty_locatiom");
-		
+		Log.info("navigated to" + cotyUrl+"/import/coty_locatiom");
 	}
 
 
 	public void selectFileToImport() {
 		uploadFile.sendKeys(System.getProperty("user.dir") + "\\resources\\Test_coty_location.csv");
-		
+		Log.info("File selected for inport");
 	}
 
 
@@ -478,24 +503,25 @@ public class cotyAdminPage {
 	public void selectDropDownToDelete() {
 		Select dropdown = new Select(selectDropDown);
 		dropdown.selectByVisibleText("Delete selected content");
-		
+		Log.info("Selected content for delete");
 	}
 
 
 	public void clickOnUpdateButton() {
 		updateButton.click();
+		Log.info("clicked on updated button");
 	}
 
 
 	public void clickOnSubNewsLink() {
 		subNewsLink.click();
-		
+		Log.info("Clicked on Sub News Link");
 	}
 
 
 	public void clickOnEditButton() {
 		editCMS.click();
-		
+		Log.info("Clicked on Edit button");
 	}
 
 
@@ -517,12 +543,13 @@ public class cotyAdminPage {
 		driver.get(cotyUrl+"admin/config/search/apachesolr/settings/solr/index");
 		clickOnIndexQueueContent();
 		clickOnSubmitButton();
-		
+		Log.info("clicked on submit button to run apache solr");
 	}
 
 
 	private void clickOnIndexQueueContent() {
-		indexQueueButton.click();		
+		indexQueueButton.click();	
+		Log.info("cliked on Index queue content");
 	}
 
 
@@ -538,16 +565,19 @@ public class cotyAdminPage {
 		createEndDate.isDisplayed();
 		updateStartdate.isDisplayed();
 		updateEndDate.isDisplayed();
+		Log.info("Verified all search fields");
 	}
 
 
 	public void enterCreatedStartDate(String str) {
-		createStartDate.sendKeys(str);		
+		createStartDate.sendKeys(str);
+		Log.info("entered created start date");
 	}
 
 
 	public void clickOnApplyButton() {
 		applyButton.click();
+		Log.info("clicked on Apply button");
 				
 	}
 
@@ -567,19 +597,19 @@ public class cotyAdminPage {
 
 	public void enterCreatedEndDate(String str) {
 		createEndDate.sendKeys(str);
-		
+		Log.info("entered created end date");
 	}
 
 
 	public void enterUpdatedStartDate(String str) {
 		updateStartdate.sendKeys(str);
-		
+		Log.info("entered updated start date");
 	}
 
 
 	public void enterUpdatedEndDate(String str) {
 		updateEndDate.sendKeys(str);
-		
+		Log.info("enetered updated end date");
 	}
 
 

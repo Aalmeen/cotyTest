@@ -89,6 +89,9 @@ public class navigationPage {
 	@FindBy(xpath = "//div[@class='icon-arrow-circle'][2]")
 	WebElement founderCTA;
 	
+	@FindBy(xpath = ".field--name-field-hero-paragraphs > div:nth-child(1) > div:nth-child(1)")
+	WebElement ourHomeCTA;
+	
 	public navigationPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -201,12 +204,14 @@ public class navigationPage {
 
 	public void clickOnMenuIcon() {
 		menuIcon.click();	
+		Log.info("clicked on menu icon");
 	}
 
 	public void clickOnOurStoryLink() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(ourStoryLink));
 		ourStoryLink.click();
+		Log.info("clicked on Our Story menu link");
 	}
 
 	public String getPageTitle() {
@@ -216,53 +221,57 @@ public class navigationPage {
 
 	public void navigateBackToMaineMenuItem() {
 		backtoMainMenu.click();
+		Log.info("clicked on back icon of menu items");
 	}
 
 	public void clickOnBrandsthatInspire() {
 		brandThatInspirelink.click();
+		Log.info("clicked on brands that inspire menu link");
 	}
 
 	public void clickOnResponsibleGrowth() {
 		responsibleGrowthLink.click();
+		Log.info("clicked on responsible growth menu link");
 	}
 
 	public void clickOnJoinUs() {
-		JoinUsLink.click();		
+		JoinUsLink.click();	
+		Log.info("clicked on Join us link");
 	}
 
 	public void verifyCTAOnOurStoryBanner() {
 		ourStoryCTA.isDisplayed();
-		
+		Log.info("Clicked on CTA icon on our story banner");
 	}
 
 	public void clickOnCTAofOurStoryBanner() {
 		ourStoryCTA.click();
-		
+		Log.info("clicked on CTA icon on our story banner");
 	}
 
 	public void verifyCTAOnOurFounderBanner() {
 		founderCTA.isDisplayed();
-		
+		Log.info("clicked on CTA icon on our founder banner");
 	}
 
 	public void clickOnCTAOnOurFounderBanner() {
 		founderCTA.click();
-		
+		Log.info("clicked on CTA icon on our founder banner");
 	}
 
 	public void verifyCTAOnStrategyBanner() {
 		ourStoryCTA.isDisplayed();
-		
+		Log.info("Verified CTA icon on strategy banner");
 	}
 
 	public void clickOnCTAofStrategyBanner() {
 		ourStoryCTA.click();
-		
+		Log.info("clicked on CTA icon of strategy banner");
 	}
 
 	public void clickOnInTheNewsLink() {
 		inTheNews.click();
-		
+		Log.info("clicked on In the News Link");
 	}
 
 
@@ -307,7 +316,19 @@ public class navigationPage {
 		twitterC4.isDisplayed();
 		facebookC4.isDisplayed();
 		linkedC4.isDisplayed();
-		instagramC4.isDisplayed();		
+		instagramC4.isDisplayed();	
+		Log.info("Verified social media links on footer");
+	}
+
+	public void verifyCTAOnHomePage() {
+		ourHomeCTA.isDisplayed();
+		Log.info("CTA icon displayed at home page");
+	}
+
+	public void clickOnCTAAtHomePage() {
+		ourHomeCTA.click();
+		Log.info("clicked on CTA icon ");
+		
 	}
 
 }
